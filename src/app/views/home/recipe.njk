@@ -1,0 +1,70 @@
+{% extends "parts/home/layout.njk" %}
+
+{% block content %}
+    <div class="recipe">
+        <div class="gallery">
+            <div class="highlight">
+                {% if not files[0] %}
+                    <img src="http://placehold.it/800x280?text=RECEITA SEM FOTO">
+                {% else %}
+                    <img src="{{files[0].src}}" alt="{{files[0}.name}}">
+                {% endif %}
+
+                <div class="lightbox-target">
+                    <img src="{{files[0}.src}}" alt="{{files[0}.name}}">
+                    <a href="#" class="lightbox-close">
+                        <i class="material-icons">close</i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="gallery-preview">
+                {% for image in files %}
+                    <img 
+                        src="{{image.src}}" 
+                        alt="{{imagem.name}}" 
+                        {% if loop.index0 == 0 %} 
+                            class="active" 
+                        {%endif%} 
+                        onclick="ImageGallery.setImage(event)"
+                    >
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="card_content">
+            <h1>{{recipe.title}}</h1>
+        </div>
+        <div class="card_info">por
+            {{recipe.chef_name}}</div>
+
+        <div class="ingredients show">
+            <h3>Ingredientes</h3>
+            {% for ingredient in recipe.ingredients%}
+                {% if (ingredient !== "") %}
+                    <li>{{ingredient}}</li>
+                {% endif %}
+            {% endfor %}
+
+        </div>
+
+        <div class="preparation show">
+            <h3>Modo de Preparo</h3>
+            {% for path in recipe.preparation %}
+                {% if (path !== "") %}
+                    <li>{{path}}</li>
+                {% endif %}
+            {% endfor %}
+
+        </div>
+
+        {% if recipe.moreinfo %}
+         <div class="moreinfo show">
+             <h3>Informações Adicionais</h3>
+             <p class="card_info">{{recipe.moreinfo}}</p>
+         </div>
+        {% endif %}
+
+
+    </div>
+{% endblock %}

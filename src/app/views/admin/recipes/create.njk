@@ -1,0 +1,13 @@
+{% extends "parts/admin/layout.njk" %}
+
+{% import "parts/container.njk" as container %}
+
+{% block content %}
+    {% call container.render('Criando Receita', 'create')%}
+        <form class="fields create" action="/admin/recipes" method="POST" enctype="multipart/form-data">                    
+            <button class="submit" type="submit">Salvar Receita</button>
+            {% include 'parts/admin/fields/recipes.njk' %}
+        </form>
+        {% include 'parts/admin/addInput.njk' %}
+    {% endcall %}
+{% endblock%}}

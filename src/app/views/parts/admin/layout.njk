@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        {%include "parts/styles.njk"%}
+
+        <title>Foodfy</title>
+    </head>
+
+    <body>
+        {%include "parts/messages.njk"%}
+        <header id="header_admin">
+            <div>
+                <a href="/admin/profile"><img src="/logo_admin.png" alt="logo Foodfy"></a>
+                <span class="links">
+                    <a href="/admin/recipes">Receitas</a>
+                    <a href="/admin/chefs">Chefs</a>
+                    {% if session.is_admin %}
+                            <a href="/admin/users">Usuários</a>
+                    {%else%}
+                            <a href="/admin/profile">Usuário</a>
+                    {% endif %}
+                </span>                        
+                        
+                <form action="/admin/logout" method="POST">
+                    <button>Sair</button>
+                </form>
+            </div>
+
+        </header>
+
+            {% block content %}
+            {% endblock %}  
+            
+        <script src="/scripts.js"></script>
+    </body>  
+</html>

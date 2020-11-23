@@ -1,0 +1,23 @@
+{% extends "parts/home/layout.njk" %}
+
+{% block content %}
+<div class="public_recipes_show">
+    <input type="hidden" name="search_value" value={{search}}>
+    <div class="subtitle">
+        <h1>Buscando por "{{search}}"</h1>
+    </div>
+    <section class="cards">
+        {% for recipe in recipes %}
+        <div class="card" id="{{recipe.id}}">
+            <img src="{{recipe.image_path}}" alt="Image of {{recipe.title}}">
+            <div class="card_content">{{recipe.title}}</div>
+            <div class="card_info">por {{recipe.chef_name}}</div>
+            <a href="/recipe/{{recipe.id}}"></a>
+        </div>
+        {% endfor %}
+    </section>
+
+</div>
+
+
+{% endblock %}

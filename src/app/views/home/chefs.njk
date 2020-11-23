@@ -1,0 +1,36 @@
+{% extends "parts/home/layout.njk" %}
+
+{% block content %}
+
+    <div class="table-chefs-public">
+
+        <div class="table table_chef">
+
+            {% for chef in chefs %}
+                <div class="table-content">
+                    <span id="chef_img">
+                        <img src="{{chef.avatar_url}}" alt="imagem {{chef.name}}">
+                    </span>
+                    <span id="chef_details">
+                        <h4>{{chef.name}}</h4>
+                        {% if chef.total_recipes == "0" %}
+                            <div class="total_recipes">Nenhuma receita cadastrada</div>
+                        {% endif %}
+
+                        {% if chef.total_recipes == "1" %}
+                            <div class="total_recipes">1 receita</div>
+                        {% endif %}
+
+                        {% if chef.total_recipes != 0 and chef.total_recipes > 1 %}
+                            <div class="total_recipes">{{chef.total_recipes}} receitas</div>
+                        {% endif %}
+                    </span>
+
+                </div>
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "parts/admin/layout.njk" %}
+
+{% import "parts/container.njk" as container %}
+
+{% block content %}
+    {% call container.render('Criar Chef', 'create')%}
+        <form class="fields create" action="/admin/chefs" method="POST">
+            <section class="details">
+                <div class="title">
+                    <div>
+                        <button class="submit" type="submit">Salvar Chef</button>
+                    </div>
+                </div>
+
+                {% include 'parts/admin/fields/chefs.njk' %}
+            </section>
+        </form>
+    {% endcall %}
+{% endblock %}}

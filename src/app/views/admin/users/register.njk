@@ -1,0 +1,18 @@
+{% extends "parts/admin/layout.njk" %}
+
+{% import "parts/container.njk" as container %}
+
+{% block content %}
+    {% call container.render('Criando Usuário', 'user-register')%}
+    <form class="fields users register" action="/admin/users" method="POST">
+            <div class="title">
+                <button  type="submit">Salvar</button>
+                <a href="/admin/users" class="button">Cancelar</a>
+            </div>
+
+            <div class="items">
+                {% include 'parts/admin/fields/users.njk' %}
+            </div>
+    </form>
+    {% endcall %}
+{% endblock%}}

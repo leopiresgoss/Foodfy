@@ -1,0 +1,63 @@
+/*SESSION*/
+.session{
+    margin: 32px auto;
+
+    min-width: fit-content;
+    width: 32%;
+    
+}
+
+.session a {
+    display: flex;
+    justify-content: center; 
+}
+
+.session a img{
+    width: 94px;
+    height: 32px;
+    
+    border-radius: 0;
+
+    object-fit: contain;
+}
+
+.session .items {
+    margin-top: 16vh;
+}
+
+.session .items h2{
+    text-align: center;
+
+    margin-bottom: 32px;
+}
+
+.session .items .item{
+    margin-bottom: 16px;
+}
+
+.session .items .item div:first-of-type{
+    font-weight: bold;
+    
+    margin-bottom: 8px;
+}
+
+.session .items .footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+/*forgot-password Form and Reset*/
+.session.forgot .items .footer,
+.session.reset .items .footer{
+    justify-content: flex-end;
+}
+
+.session button{
+    width: 134px;
+    height: 37px;
+}
+/*input errors*/
+input.active{
+    border: 1px solid var(--button-delete);
+}

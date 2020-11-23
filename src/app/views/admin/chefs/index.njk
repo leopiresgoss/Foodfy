@@ -1,0 +1,35 @@
+{% extends "parts/admin/layout.njk" %}
+
+{% block content %}
+    <div class="table-container">
+
+        <div class="title index">
+            <div>
+                {% if session.is_admin %}
+                    <h3>Gerenciar Chefs</h3>
+                    <button>
+                        <a href="/admin/chefs/create">Novo Chef</a>
+                    </button>
+                {% else %}
+                    <h3>Visualizar Chefs</h3>
+                {% endif %}
+
+            </div>
+        </div>
+        
+        <div class="table table_chef">
+            {% for chef in chefs %}
+                <div class="table-content">
+                    <span id="chef_img">
+                        <img src="{{chef.avatar_url}}" alt="avatar {{chef.name}}">
+                    </span>
+                    <span id="chef_details">
+                        <h4>{{chef.name}}</h4>
+                        <a href="/admin/chefs/{{chef.id}}">Visualizar</a>
+                    </span>
+
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock%}}

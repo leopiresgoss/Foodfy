@@ -1,0 +1,30 @@
+{% extends "parts/admin/layout.njk" %}
+
+{% import "parts/container.njk" as container %}
+
+{% block content %}
+    {% call container.render('Editar Chef', 'edit')%}
+        <section class="details" id="details-edit">
+            <form class="fields" action="/admin/chefs?_method=PUT" method="POST">
+                <input type="hidden" name="id" value="{{chef.id}}">
+                <div class="title">
+                    <div>
+                        <button class="submit" type="submit">Salvar</button>
+                    </div>
+                </div>
+                {% include 'parts/admin/fields/chefs.njk' %}
+            </form>
+
+            <form id="form-delete" class="delete" action="/admin/chefs?_method=DELETE" method="POST">
+                <input type="hidden" name="total_recipes" value="{{chef.total_recipes}}">
+                <input type="hidden" name="id" value="{{chef.id}}">
+                <div>
+                    <button type="submit">Deletar</button>
+                </div>
+            </form>
+
+        </section>
+    {% endcall %}
+    {% include 'parts/admin/delete-confirmation.njk' %}
+
+{% endblock%}}

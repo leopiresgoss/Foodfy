@@ -1,0 +1,55 @@
+{% extends "parts/admin/layout.njk" %}
+
+{% block content %}
+    <div class="chef">
+        <div class="title">
+            <div>
+                <h3>Chef: {{chef.name}}</h3>
+                {% if session.is_admin %}
+                    <button><a href="/admin/chefs/{{chef.id}}/edit">Editar Chef</a></button>
+                {% endif %}
+            </div>
+        </div>
+        <div class="image">
+            <img src="{{avatar.path}}">
+        </div>
+        <div class="card_content">
+            <h1>{{chef.name}}</h1>
+        </div>
+        {% if chef.total_recipes == "0" %}
+            <div class="card_info">Nenhuma receita cadastrada</div>
+        {% endif %}
+
+        {% if chef.total_recipes == "1" %}
+            <div class="card_info">1 receita</div>
+        {% endif %}
+
+        {% if chef.total_recipes != 0 and chef.total_recipes > 1 %}
+            <div class="card_info">{{chef.total_recipes}} receitas</div>
+        {% endif %}
+        
+        {% if chef.total_recipes != 0 %}
+            <div class="chef_recipes">
+                <h2>Receitas</h2>
+                <div class="table">
+                
+                    {% for recipe in recipes %}
+                        <div class="table-content">
+                            <span>
+                                <img src="{{recipe.image_path}}" alt="imagem {{recipe.title}}">
+                            </span>
+                            <span>
+                                <h4>{{recipe.title}}</h4>
+                                <div class="name">por
+                                    {{recipe.chef_name}}</div>
+                                <a href="/admin/recipes/{{recipe.id}}">Visualizar</a>
+                            </span>
+
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>        
+        {% endif %}
+    </div>
+
+{% endblock %}

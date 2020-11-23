@@ -1,0 +1,30 @@
+<div class="item">
+    <div>Nome</div>
+    <div>
+        <div>
+            <input type="text" name="name" value="{{ chef.name }}">
+        </div>
+    </div>
+
+</div>
+
+
+<div class="item" >
+    <div id="avatar-preview">
+            <div>Avatar</div>
+    <div>
+        <div id="avatar-link">
+            {% if avatar %}
+                <div class="avatar_url">
+                     <input type="text" name="avatar_input" value={{avatar.path}}>
+                </div>
+            {% endif %}   
+        </div>
+    </div>
+    </div>
+
+    <div id="avatar-upload">
+        <button disabled="disabled" id="avatar-button">Enviar Avatar</button>
+        <div class="button-mask" onclick="AvatarUpload.handFileInput()"></div>
+    </div>
+</div>

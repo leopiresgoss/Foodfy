@@ -1,0 +1,28 @@
+<script>
+const formDelete = document.querySelectorAll(".delete")
+const total_recipes = document.querySelector("input[name=total_recipes]")
+
+
+if (total_recipes) {
+    formDelete[0].addEventListener("submit", function (event) {
+    if(total_recipes.value == 0) {
+        const confirmation = confirm("Deseja Deletar?")
+        if (!confirmation) {
+        event.preventDefault()
+        }
+    } else {
+        window.alert("Chef com receitas cadastradas não pode ser deletado")
+        event.preventDefault()
+    }
+
+    })
+
+} else {
+    formDelete.forEach(button => {
+            button.addEventListener("submit", function (event) {
+                const confirmation = confirm("Deseja Deletar?")
+                if (!confirmation) event.preventDefault()
+            })
+    })
+}
+</script>

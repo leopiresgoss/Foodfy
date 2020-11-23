@@ -1,0 +1,184 @@
+.container {
+    max-width: 100%;
+
+    margin: 0 230px 55px;
+
+    position: relative;
+
+}
+
+.container button.submit{
+    width: 139px;
+    height: 37px;
+    
+    padding: 8px;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/* create/edit recipes */
+.container .item{
+    margin-top: 32px;
+}
+
+
+.item div:first-of-type{
+    font-weight: bold;
+    color: #111111;
+    margin-bottom: 10px;
+
+}
+
+select,
+input,
+#moreinfo,
+#photos-upload {  
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid #dddddd;
+    border-radius: 4px;  
+    font-size: 16px;
+    height: 49px;
+    padding: 15px 43px 15px 20px;
+    
+}
+
+#ingredients .ingredient,
+#preparation .preparation {
+    margin-bottom: 10px;
+
+}
+
+.container .add-ingredient,
+.container .add-preparation,
+.table-content span a{
+    color: var(--button-1);
+    font-family: 'Roboto';
+    font-weight: bold;
+    font-size: 16px;
+    
+    background: none;
+    text-decoration: none;
+    cursor: pointer;
+
+    width: fit-content;
+}
+
+.add-ingredient,
+.add-preparation {
+    text-align: start;
+}
+
+#moreinfo {
+    text-align: justify;
+    font-family: 'Roboto';
+    height: 221px;
+    padding: 18px 43px 18px 20px;
+}
+/* photos recipes upload */
+#photos-container {
+    display: flex;
+    flex-direction: row;
+}
+.item #photos-upload {
+    position: relative;
+
+    width: 144px;
+    min-width: 144px; 
+    height: 144px;
+
+    margin: 0;
+}
+.item #photos-preview{
+    margin: 0;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#photos-preview .photo {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+
+    position: relative;
+    
+    width: 144px;
+    height: 144px;
+
+    margin: 0 0 4px 4px;
+}
+
+#photos-preview .photo img{
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box; 
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+
+    object-fit: cover;
+}
+.item #photos-upload #photos-input,
+.item #avatar-upload #avatar-input {
+    opacity: 0;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.item #photos-upload i,
+.item #photos-preview .photo i {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    color: #999999;
+    font-size: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+    
+    cursor: pointer;
+}
+/* photos remove */
+.item #photos-preview .photo i {
+    opacity: 0;
+}
+
+.item #photos-preview .photo i:hover {
+    color: red;
+
+    background-color: rgba(255,255,255,0.8);
+
+    opacity: 1;
+    transition: opacity 200ms;
+
+}
+
+#form-delete{
+    position: absolute;
+    top: 0;
+    right: 162px;
+    width: inherit;
+}
+
+
+#form-delete div button{
+    background-color: var(--button-delete);
+    width: 92px;
+    height: 37px;
+}

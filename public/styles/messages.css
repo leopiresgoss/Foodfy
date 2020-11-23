@@ -1,0 +1,29 @@
+/* messages */
+@keyframes hidemessage {
+    to{
+        top: -50px;
+        opacity: 0;
+    }
+}
+.message{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    
+    height: 80px;
+    width: 400px;
+
+    color: white;
+
+    animation: hidemessage 400ms 5s ease-out forwards;
+}
+.message.error{
+    background-color: #e74c3c;    
+}
+.message.success{
+    background-color: #01B12A;
+}

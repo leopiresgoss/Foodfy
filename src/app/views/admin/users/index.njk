@@ -1,0 +1,44 @@
+{% extends "parts/admin/layout.njk" %}
+
+{% block content %}
+    <div class="table-container list">
+
+        <div class="title index">
+            <div>
+                <h3>Usuários</h3>
+
+                <a href="/admin/users/register">
+                    <button>Novo</button>
+                </a>
+
+            </div>
+        </div>
+        <div class="table table_users">
+
+            {% for user in users %}
+                <div class="table-content">
+                    <div id="user_details">
+                        <h4>{{user.name}}</h4>
+                        <p>{{user.email}}</p>
+                        <div>
+                            {% if session.userId == user.id %}
+                                <a href="/admin/profile">Editar</a>
+                            {% else %}
+                                <a href="/admin/users/{{user.id}}/edit">Editar</a>
+                                <form class="delete" action="/admin/users?_method=DELETE" method="POST">
+                                    <input type="hidden" name="id" value="{{user.id}}">
+                                    <button type="submit">Remover</button>
+                                </form>
+                            {% endif %}
+
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+    {% include 'parts/admin/delete-confirmation.njk' %}
+{% endblock %}}

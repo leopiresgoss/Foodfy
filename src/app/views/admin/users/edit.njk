@@ -1,0 +1,31 @@
+{% extends "parts/admin/layout.njk" %}
+
+{% import "parts/container.njk" as container %}
+
+{% block content %}
+    {% call container.render('Atualizar Usuário', 'user-edit')%}
+        <form class="fields users" action="/admin/users?_method=PUT" method="POST">
+            <input type="hidden" name="id" value="{{user.id}}">
+            <div class="title edit">
+                <div>
+                    <button class="submit" type="submit">Salvar</button>                
+                </div>   
+            </div>
+            
+
+            <div class="items">
+                {% include 'parts/admin/fields/users.njk' %}
+            </div>
+
+        </form>
+
+        <form id="form-delete" class="delete" action="/admin/users?_method=DELETE" method="POST">
+            <input type="hidden" name="id" value="{{user.id}}">
+            <div>
+                <button type="submit">Deletar</button>
+            </div>
+
+        </form>
+        {% endcall %}
+    {% include 'parts/admin/delete-confirmation.njk' %}
+{% endblock %}
