@@ -11,7 +11,7 @@
  ```bash
 CREATE DATABASE foodfydb;
 ```
- * Acesse o foodfydb e, então, copie e cole o restante do arquivo /foodfydb
+ * Acesse o foodfydb e, então, copie e cole o restante do arquivo \foodfydb.sql
  * Rode a query 
  * No VS Code, rode:
   ```bash
