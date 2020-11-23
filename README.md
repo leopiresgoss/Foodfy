@@ -20,7 +20,9 @@ npm install
   ```bash
  node seed.js
 ```
-**OBS:** Foi utilizado o [Mailtrap](https://mailtrap.io/) para o envio falso de emails para testar o login.
-Caso queira utilizar essa opção, altere as configurações em: \src\lib\mailer.js
+## Observação
+#### Foi utilizado o [Mailtrap](https://mailtrap.io/) para o envio falso de emails para testar o login e reset de senha.
+#### Caso queira utilizar essa opção, altere as configurações em: \src\lib\mailer.js
 
-
+## Agradecimentos 
+ Com muito carinho, saudo toda a equipe da Rocketseat por ter me proporcionado esse primeiro contato com a programação :purple_heart:
