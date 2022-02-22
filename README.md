@@ -1,28 +1,28 @@
 # Foodfy
- Desafio final do Bootcamp da Rocketseat. 
+Rocketseat Bootcamp Final Project using NODE.JS
 
-## Objetivo
- Catálogo de diversas receitas com a opção para administrar, adicionar e deletar as mesmas.
+## Objective
+ Foodfy is a catalog of several recipes with the option to manage, add and delete them.
  
-## Instalação 
- * Instale o [NodeJs](https://nodejs.org/en/download/)
- * Para o banco de dados, foi utilizado o [PostgreSQL](https://www.postgresql.org/download/) e [Postbird](https://www.electronjs.org/apps/postbird)
- * Crie o banco de dados no Postbird rodando a query: 
+## Installation 
+ * Install [NodeJs](https://nodejs.org/en/download/)
+ * For the database, download [PostgreSQL](https://www.postgresql.org/download/) and [Postbird](https://www.electronjs.org/apps/postbird)
+ * Create the database at Postbird by running this query: 
  ```bash
 CREATE DATABASE foodfydb;
 ```
- * Acesse o foodfydb e, então, copie e cole o restante do arquivo \foodfydb.sql
- * Rode a query 
- * No VS Code, rode:
+ * Access foodfydb at Postbird and then copy and paste the rest of the \foodfydb.sql file
+ * Run the pasted query query 
+ * In your terminal, access the project repo and run:
   ```bash
 npm install
 ```
   ```bash
  node seed.js
 ```
-## Observação
-#### Foi utilizado o [Mailtrap](https://mailtrap.io/) para o envio falso de emails para testar o login e reset de senha.
-#### Caso queira utilizar essa opção, altere as configurações em: \src\lib\mailer.js
+## Obs
+#### [Mailtrap](https://mailtrap.io/) was used to send fake emails to test login and password reset.
+#### If you want to test this option, change the settings in: \src\lib\mailer.js
 
-## Agradecimentos 
- Com muito carinho, saudo toda a equipe da Rocketseat por ter me proporcionado esse primeiro contato com a programação :purple_heart:
+## Acknowledgment 
+ Thank you the entire Rocketseat team for providing me this first contact with the programming :purple_heart:
